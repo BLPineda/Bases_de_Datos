@@ -5,6 +5,10 @@
  */
 package Base_de_datos;
 
+import DAO.DAOIMPL;
+import DAO.InterfazDAO;
+import Modelo.Alumno;
+
 /**
  *
  * @author lenin
@@ -14,10 +18,17 @@ public class Ejecutor {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        BaseDeDatos base = new BaseDeDatos();
-        
-        base.EstablerConexion();
+    public static void main(String[] args) throws Exception {
+        Alumno student = new Alumno();
+        student.setId(1);
+        student.setNombre("Carlos");
+        try {
+            InterfazDAO dao = new DAOIMPL();
+//            dao.registrar(student);
+              dao.modificar(student);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
     }
     
+}
 }

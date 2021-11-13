@@ -7,13 +7,14 @@ package Base_de_datos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
  * @author lenin
  */
 public class BaseDeDatos {
-        Connection conectar = null;
+    public Connection conectar = null;
     
     String usuario = "postgres";
     String contraseña = "Programacion2";
@@ -40,5 +41,17 @@ public class BaseDeDatos {
         return conectar;
         
     }
-    
+//    public void conectar() throws Exception{
+//        try{
+//            conectar = DriverManager.getConnection(cadena, usuario, puerto);
+//            Class.forName("org.postgresql.Driver");
+//        } catch (Exception e){
+//        throw e;
+//        }
+//    }
+    public void cerrar() throws SQLException{
+        if (conectar.isClosed()){
+            conectar.close();
+        }
+    }
 }
