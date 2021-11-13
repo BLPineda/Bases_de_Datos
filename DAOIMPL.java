@@ -38,7 +38,7 @@ public class DAOIMPL extends BaseDeDatos implements InterfazDAO {
     public void modificar(Alumno alumno) throws Exception {
         try{
         this.EstablerConexion();
-        PreparedStatement st = this.conectar.prepareStatement("update alumno set nombre = ? where id = ?");
+        PreparedStatement st = this.conectar.prepareStatement("update Ejercicio set nombre = ? where id = ?");
         st.setString(1, alumno.getNombre());
         st.setInt(2, alumno.getId());
         st.executeUpdate();
@@ -53,7 +53,7 @@ public class DAOIMPL extends BaseDeDatos implements InterfazDAO {
     public void eliminar(Alumno alumno) throws Exception {
         try{
         this.EstablerConexion();
-        PreparedStatement st = this.conectar.prepareStatement("delete from alumno where id = ? ");
+        PreparedStatement st = this.conectar.prepareStatement("delete from Ejercicio where id = ? ");
         st.setInt(1, alumno.getId());
         st.executeUpdate();
         } catch (Exception e){
@@ -68,7 +68,7 @@ public class DAOIMPL extends BaseDeDatos implements InterfazDAO {
         List <Alumno> lista = new ArrayList();
         try{
         this.EstablerConexion();
-        PreparedStatement st = this.conectar.prepareStatement("select * from Ejercicio");
+        PreparedStatement st = this.conectar.prepareStatement("select * from Ejercicio;");
         ResultSet rs = st.executeQuery();
         while (rs.next()){
             Alumno alumn = new Alumno();

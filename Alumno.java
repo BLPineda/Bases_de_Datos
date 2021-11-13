@@ -10,8 +10,8 @@ package Base_de_datos;
  * @author lenin
  */
 public class Alumno {
-    private int id;
-    private String nombre;
+    public int id;
+    public String nombre;
 
     
     
