@@ -18,4 +18,11 @@ public interface InterfazDAO {
     public void eliminar (Alumno alumno) throws Exception;
     public List<Alumno> listar() throws Exception;
     
+    public void registrar (Catedratico catedratico) throws Exception;
+    public void modificar (Catedratico catedratico) throws Exception;
+    public void eliminar (Catedratico catedratico) throws Exception;
+    public List<Catedratico> listado() throws Exception;
+    
+    
+    
 }
